@@ -1,0 +1,42 @@
+class Solution {
+public:
+int f(char a)
+{
+	char I, V, X, L, C, D, M;
+	switch (a)
+	{
+	case 'I':return 1;
+		break;
+	case 'V':return 5;
+		break;
+	case 'X':return 10;
+		break;
+	case 'L':return 50;
+		break;
+	case 'C':return 100;
+		break;
+	case 'D':return 500;
+		break;
+	case 'M':return 1000;
+		break;
+
+
+	}
+}
+
+ int romanToInt(string s)
+{
+	int num=0;
+	int len;
+	len = s.length();
+	for (int i = 0; i < len; i++)
+	{
+		if (i < (len - 1) & f(s[i]) < f(s[i + 1]))
+		{
+			num = num + -1*f(s[i]);
+		}
+		else 
+		num = num + f(s[i]);
+	}
+	return num;
+}
